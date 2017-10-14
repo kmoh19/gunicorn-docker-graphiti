@@ -1,0 +1,88 @@
+body{
+	
+	margin:0;
+	background-color: #413C58;
+	color:white;
+	
+	
+}
+
+.media-body{
+	
+	position:relative;
+	
+}
+
+
+/* .edits{ */
+	
+/* 	float: right; */
+	
+	
+	
+/* } */
+
+.bdy{
+
+	background-color: #413C58;
+	animation: dayToNight 10s infinite 1.5s;
+	
+	
+}
+
+.icontent {
+  position: absolute;
+  top: 48%;
+  left: 32.5%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
+.sun {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #FCD25B;
+  border: 0.1px solid #413C58;
+  overflow: hidden;
+  animation: dayToNight2 3s infinite 1.0s;
+}
+
+.shadow {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #413C58;
+  top: -5px;
+  left: 0px;
+  animation: moveShadow 3s infinite 1.0s;
+}
+
+@keyframes moveShadow {
+  0% {
+    transform: translateX(50px);
+    background-color: white;
+  }
+  50% {
+    transform: translateX(-10px);
+    background-color: black;
+  }
+  100% {
+    transform: translateX(-70px);
+    background-color: white;
+  }
+}
+
+@keyframes dayToNight {
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: black;
+  }
+  100% {
+    background-color: white;
+  }
+}
+

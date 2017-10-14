@@ -1,0 +1,19 @@
+{% extends 'posts/post_base.html' %}
+
+
+{% block post_content %}
+
+<div class='col-md-10' >
+
+	{% include 'posts/_post.html' %}
+	<div id='render_port' style='position:relative'>
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	{{ post.custom_viz|safe }}
+	</div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,46 @@
+<div class='post media'>
+
+	{{post.message_html|safe}}
+	
+	<div class='media-body'>
+		<h5 class ='media-heading'>
+			<span class='username'>
+			
+				<a href="{% url 'posts:for_user' username=post.user.username %}">@{{post.user.username}}</a>
+			
+			</span>
+			
+			<time class='time'>
+			
+				<a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{post.created_at}}</a>
+			
+			</time>
+			
+			{% if user.is_authenticated and post.user == user and not 'delete' in request.path%}
+			
+			<a href="{% url 'posts:edit' pk=post.pk %}" title='edit' class='btn btn-simple edits'>
+			
+				<span class='glyphicon glyphicon-pencil text-warning' aria-hidden='true'></span>
+				<span class='text-warning icon-label'>Edit</span>
+			
+			
+			</a>
+			
+			<a href="{% url 'posts:delete' pk=post.pk %}" title='delete' class='btn btn-simple edits'>
+			
+				<span class='glyphicon glyphicon-trash text-danger' aria-hidden='true'></span>
+				<span class='text-danger icon-label'>Delete</span>
+			
+			
+			</a>
+	
+			{% endif %}
+		
+		</h5>
+		
+		
+	
+	</div>
+
+
+</div>
